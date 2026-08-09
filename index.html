@@ -1,0 +1,1026 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Prashant Portfolio</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #050510;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      background: rgba(5, 5, 16, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 35px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 12px #00ffff;
+    }
+
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      min-height: 100vh;
+      padding: 120px 8% 80px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title {
+      font-size: 42px;
+      margin-bottom: 50px;
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff;
+      text-align: center;
+    }
+
+
+    /* ================= HOME ================= */
+
+    #home {
+      text-align: center;
+    }
+
+    /* PROFILE IMAGE */
+
+    .profile-image {
+      width: 170px;
+      height: 170px;
+
+      margin: 0 auto 30px;
+
+      padding: 5px;
+
+      border-radius: 50%;
+
+      border: 2px solid #00ffff;
+
+      box-shadow:
+        0 0 15px #00ffff,
+        0 0 40px rgba(0, 255, 255, 0.5);
+
+      overflow: hidden;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      animation: profileGlow 3s infinite alternate;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      display: block;
+    }
+
+    @keyframes profileGlow {
+
+      from {
+        box-shadow:
+          0 0 15px #00ffff,
+          0 0 25px rgba(0, 255, 255, 0.3);
+      }
+
+      to {
+        box-shadow:
+          0 0 25px #00ffff,
+          0 0 55px rgba(0, 255, 255, 0.7);
+      }
+
+    }
+
+
+    #home h1 {
+      font-size: 65px;
+
+      color: #00ffff;
+
+      text-shadow:
+        0 0 10px #00ffff,
+        0 0 30px #00ffff;
+
+      margin-bottom: 15px;
+    }
+
+    #home h2 {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    #home p {
+      max-width: 700px;
+
+      line-height: 1.8;
+
+      color: #ccc;
+
+      font-size: 17px;
+    }
+
+
+    /* ================= BUTTONS ================= */
+
+    .btns {
+      margin-top: 35px;
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+
+      padding: 14px 30px;
+
+      border: 1px solid #00ffff;
+
+      background: transparent;
+
+      color: #00ffff;
+
+      border-radius: 5px;
+
+      cursor: pointer;
+
+      font-size: 16px;
+
+      text-decoration: none;
+
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00ffff;
+
+      color: #050510;
+
+      box-shadow:
+        0 0 15px #00ffff,
+        0 0 35px #00ffff;
+
+      transform: translateY(-3px);
+    }
+
+    .btn2 {
+      border-color: #ff00ff;
+      color: #ff00ff;
+    }
+
+    .btn2:hover {
+      background: #ff00ff;
+
+      color: white;
+
+      box-shadow:
+        0 0 15px #ff00ff,
+        0 0 35px #ff00ff;
+    }
+
+
+    /* ================= ABOUT ================= */
+
+    .about {
+      width: 100%;
+      max-width: 1000px;
+
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 30px;
+    }
+
+    .about-box {
+      padding: 35px;
+
+      border: 1px solid rgba(0, 255, 255, 0.4);
+
+      border-radius: 15px;
+
+      background: rgba(255, 255, 255, 0.03);
+
+      backdrop-filter: blur(10px);
+
+      transition: 0.4s;
+    }
+
+    .about-box:hover {
+      transform: translateY(-10px);
+
+      border-color: #00ffff;
+
+      box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    .about-box p {
+      line-height: 1.8;
+
+      color: #ccc;
+    }
+
+
+    /* ================= SKILLS ================= */
+
+    .cards {
+      width: 100%;
+      max-width: 1100px;
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 30px;
+    }
+
+    .card {
+      padding: 35px 25px;
+
+      text-align: center;
+
+      border: 1px solid rgba(0, 255, 255, 0.4);
+
+      border-radius: 15px;
+
+      background: rgba(255, 255, 255, 0.03);
+
+      backdrop-filter: blur(10px);
+
+      transition: 0.4s;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 100%;
+      height: 2px;
+
+      top: 0;
+      left: -100%;
+
+      background: #00ffff;
+
+      transition: 0.5s;
+
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    .card:hover::before {
+      left: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-12px) scale(1.02);
+
+      border-color: #00ffff;
+
+      box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.35);
+    }
+
+    .card h3 {
+      color: #00ffff;
+
+      margin-bottom: 15px;
+
+      font-size: 23px;
+    }
+
+    .card p {
+      color: #ccc;
+
+      line-height: 1.7;
+    }
+
+    .skill-level {
+      display: inline-block;
+
+      margin-top: 20px;
+
+      padding: 6px 12px;
+
+      border: 1px solid #00ffff;
+
+      border-radius: 20px;
+
+      color: #00ffff;
+
+      font-size: 10px;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* ================= PROJECTS ================= */
+
+    .projects {
+      width: 100%;
+      max-width: 1100px;
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 30px;
+    }
+
+    .project {
+      display: block;
+
+      text-decoration: none;
+
+      color: white;
+
+      border: 1px solid rgba(0, 255, 255, 0.4);
+
+      border-radius: 15px;
+
+      overflow: hidden;
+
+      background: rgba(255, 255, 255, 0.03);
+
+      transition: 0.4s;
+    }
+
+    .project:hover {
+      transform: translateY(-12px);
+
+      border-color: #00ffff;
+
+      box-shadow:
+        0 0 25px rgba(0, 255, 255, 0.4);
+    }
+
+    .project img {
+      width: 100%;
+
+      height: 190px;
+
+      object-fit: cover;
+
+      display: block;
+
+      background: #111;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-tech {
+      display: inline-block;
+
+      margin-bottom: 12px;
+
+      padding: 5px 10px;
+
+      border: 1px solid #00ffff;
+
+      border-radius: 20px;
+
+      color: #00ffff;
+
+      font-size: 11px;
+    }
+
+    .project h3 {
+      font-size: 23px;
+
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      color: #aaa;
+
+      line-height: 1.6;
+    }
+
+
+    /* ================= CONTACT ================= */
+
+    .contact-box {
+      width: 100%;
+      max-width: 600px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 20px;
+    }
+
+    .contact-box input,
+    .contact-box textarea {
+
+      width: 100%;
+
+      padding: 15px;
+
+      background: rgba(255, 255, 255, 0.05);
+
+      border: 1px solid rgba(0, 255, 255, 0.4);
+
+      border-radius: 8px;
+
+      color: white;
+
+      outline: none;
+
+      font-size: 16px;
+    }
+
+    .contact-box textarea {
+      height: 150px;
+
+      resize: vertical;
+    }
+
+    .contact-box input:focus,
+    .contact-box textarea:focus {
+
+      border-color: #00ffff;
+
+      box-shadow:
+        0 0 15px rgba(0, 255, 255, 0.3);
+    }
+
+    .contact-box .btn {
+      width: fit-content;
+
+      align-self: center;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    footer {
+
+      text-align: center;
+
+      padding: 25px;
+
+      color: #777;
+
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 800px) {
+
+      nav ul {
+        gap: 15px;
+
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      #home h1 {
+        font-size: 42px;
+      }
+
+      #home h2 {
+        font-size: 24px;
+      }
+
+      .about,
+      .cards,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .title {
+        font-size: 32px;
+      }
+
+      .profile-image {
+        width: 140px;
+        height: 140px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav>
+
+    <ul>
+
+      <li>
+        <a href="#home">Home</a>
+      </li>
+
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#services">Skills</a>
+      </li>
+
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
+
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- ================= HOME ================= -->
+
+  <section id="home">
+
+    <div class="profile-image">
+
+      <img
+        src="profile.JPEG"
+        alt="Prashant Singh"
+      >
+
+    </div>
+
+
+    <h1>
+      PRASHANT.X
+    </h1>
+
+
+    <h2>
+     INTRO
+    </h2>
+
+
+    <p>
+
+      Hey, I'm Prashant Singh.<br>
+
+      A new creator with big dreams and crazy ideas.
+
+      This is my small creation — hope you like it!
+
+      Your feedback means a lot to me.
+
+    </p>
+
+
+    <div class="btns">
+
+      <a
+        href="#about"
+        class="btn"
+      >
+        Explore
+      </a>
+
+
+      <a
+        href="#projects"
+        class="btn btn2"
+      >
+        Projects
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= ABOUT ================= -->
+
+  <section id="about">
+
+    <h2 class="title">
+      About Me
+    </h2>
+
+
+    <div class="about">
+
+
+      <div class="about-box">
+
+        <p>
+
+          I am Prashant Singh, an Engineer and creator.
+
+          I create futuristic websites with modern
+          animations, crazy ideas, smooth effects
+          and cyberpunk designs.
+
+          My mission is to make websites look
+          premium and futuristic.
+
+        </p>
+
+      </div>
+
+
+      <div class="about-box">
+
+        <p>
+
+          <strong>
+            Technologies Used
+          </strong>
+
+          <br><br>
+
+          HTML, CSS, JavaScript,
+
+          animations, glassmorphism,
+
+          responsive design and
+
+          advanced UI effects.
+
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= SKILLS ================= -->
+
+  <section id="services">
+
+    <h2 class="title">
+      My Skills
+    </h2>
+
+
+    <div class="cards">
+
+
+      <div class="card">
+
+        <h3>
+          HTML
+        </h3>
+
+        <p>
+
+          Building clean, structured
+          and modern web pages with
+          semantic HTML.
+
+        </p>
+
+        <span class="skill-level">
+          WEB DEVELOPMENT
+        </span>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          CSS
+        </h3>
+
+        <p>
+
+          Creating futuristic interfaces
+          with animations, glassmorphism,
+          responsive layouts and modern effects.
+
+        </p>
+
+        <span class="skill-level">
+          UI DESIGN
+        </span>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          JavaScript
+        </h3>
+
+        <p>
+
+          Adding interactivity, dynamic
+          features, buttons, effects and
+          interactive web experiences.
+
+        </p>
+
+        <span class="skill-level">
+          INTERACTIVITY
+        </span>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Python
+        </h3>
+
+        <p>
+
+          Learning and building projects
+          using Python with programming
+          fundamentals and logic.
+
+        </p>
+
+        <span class="skill-level">
+          PROGRAMMING
+        </span>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Web Animation
+        </h3>
+
+        <p>
+
+          Designing smooth animations,
+          hover effects, transitions and
+          futuristic cyberpunk experiences.
+
+        </p>
+
+        <span class="skill-level">
+          ANIMATION
+        </span>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Responsive Design
+        </h3>
+
+        <p>
+
+          Creating websites that adapt
+          smoothly to desktop, tablet
+          and mobile screens.
+
+        </p>
+
+        <span class="skill-level">
+          RESPONSIVE WEB
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= PROJECTS ================= -->
+
+  <section id="projects">
+
+    <h2 class="title">
+      Projects
+    </h2>
+
+
+    <div class="projects">
+
+
+      <!-- PROJECT 01 -->
+
+      <a
+        href="#"
+        target="_blank"
+        class="project"
+      >
+
+        <img
+          src="mechmaster-pro.PNG"
+          alt="MechMaster Pro"
+        >
+
+
+        <div class="project-content">
+
+          <span class="project-tech">
+            MECH MASTER
+          </span>
+
+          <h3>
+            MechMaster Pro
+          </h3>
+
+          <p>
+
+            Engineering tools, resources
+            and futuristic web experience.
+
+          </p>
+
+        </div>
+
+      </a>
+
+
+      <!-- PROJECT 02 -->
+
+      <a
+        href="#"
+        target="_blank"
+        class="project"
+      >
+
+        <img
+          src="game.PNG"
+          alt="Game Website"
+        >
+
+
+        <div class="project-content">
+
+          <span class="project-tech">
+            HTML • CSS • JavaScript
+          </span>
+
+          <h3>
+            Game
+          </h3>
+
+          <p>
+
+            Interactive gaming website
+            with modern effects and animations.
+
+          </p>
+
+        </div>
+
+      </a>
+
+
+      <!-- PROJECT 03 -->
+
+      <a
+        href="#"
+        target="_blank"
+        class="project"
+      >
+
+        <img
+          src="govt-job.jpg"
+          alt="Government Job Website"
+        >
+
+
+        <div class="project-content">
+
+          <span class="project-tech">
+            HTML • CSS • JavaScript
+          </span>
+
+          <h3>
+            Govt Job Web
+          </h3>
+
+          <p>
+
+            Government job portal for
+            engineering students with jobs,
+            admit cards, results and more.
+
+          </p>
+
+        </div>
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONTACT ================= -->
+
+  <section id="contact">
+
+    <h2 class="title">
+      Contact Me
+    </h2>
+
+
+    <div class="contact-box">
+
+
+     <a
+  href="mailto:prashantayadav302@gmail.com"
+  class="btn"
+>
+  Send Message
+</a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    © 2026 Prashant Singh |
+    Prashant Portfolio
+
+  </footer>
+
+
+</body>
+</html>
+
